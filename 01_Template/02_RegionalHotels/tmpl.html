@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Regional Hotels</title>
+</head>
+
+<body>
+    <h2>Regional Hotels</h2>
+    {{range .}}
+    <h4>Hotel : {{.Name}}</h4>
+    <ul>
+        <li>City : {{.Address.City}}</li>
+        <li>ZIP : {{.Address.ZIP}}</li>
+        <li>Region : {{.Address.Region}}</li>
+    </ul>
+    {{end}}
+</body>
+
+</html>

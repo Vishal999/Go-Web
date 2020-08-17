@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Templates</title>
+</head>
+
+<body>
+    <p>something</p>
+    {{range .}}
+    <h2>Academic Year : {{.AcademicYear}}</h2>
+    <h4>Semester : {{.Fall.Term}}</h4>
+    <h6>Courses : </h6>
+    {{range .Fall.Courses}}
+    <ol>
+        <li>Name : {{.Name}}</li>
+        <li>Number {{.Number}}</li>
+        <li>Units {{.Units}}</li>
+    </ol>
+    {{end}}
+    <h4>Semester : {{.Spring.Term}}</h4>
+    <h6>Courses : </h6>
+    {{range .Spring.Courses}}
+    <ol>
+        <li>Name : {{.Name}}</li>
+        <li>Number {{.Number}}</li>
+        <li>Units {{.Units}}</li>
+    </ol>
+    {{end}}
+    {{end}}
+</body>
+
+</html>

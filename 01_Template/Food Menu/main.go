@@ -16,10 +16,15 @@ type meal struct {
 	Items []item
 }
 
-type meals []meal
+type menu []meal
 
+
+type restaurant struct{
+	Name string
+	Menu menu
+}
 func main() {
-	m := meals{
+	m := menu{
 		meal{
 			Meal: "Breakfast",
 			Items: []item{
@@ -51,10 +56,20 @@ func main() {
 			},
 		},
 	}
+	restaurants := []restaurant{
+		restaurant{
+			Name : "Haldiram",
+			Menu : m,
+		},
+		restaurant{
+			Name : "BTW",
+			Menu : m,
+		},
+	}
 	// log.Println(m)
 	tpl := template.Must(template.ParseFiles("tmpl.html"))
 
-	err := tpl.Execute(os.Stdout, m)
+	err := tpl.Execute(os.Stdout, restaurants)
 	if err != nil {
 		log.Fatalln(err)
 	}

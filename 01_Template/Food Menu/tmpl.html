@@ -7,8 +7,10 @@
 </head>
 
 <body>
-    <h3>Food Menu</h3>
+    <h3>Food Vlog</h3>>
     {{range .}}
+    <h5>Restaurant - {{.Name}}</h5>
+    {{range .Menu}}
     <h5>{{.Meal}}</h5>
 
     <ol>
@@ -16,7 +18,7 @@
         <li> {{.Name}} | {{.Description}} - {{.Price}}</li>
         {{end}}
     </ol>
-
+    {{end}}
     {{end}}
 </body>
 
